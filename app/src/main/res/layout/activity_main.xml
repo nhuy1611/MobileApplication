@@ -5,14 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <!--
+    1. Định vị các views:
+    => Ví dụ "layout_constraintTop_toBottomOf" Ràng buộc phần trên của view hiện tại đến phần dưới của view khác.
 
-    <TextView
+    layout_constraintLeft_toLeftOf	            Trái với trái
+    layout_constraintLeft_toRightOf	            Bên trái với bên phải của phần tử chỉ ra
+    layout_constraintRight_toLeftOf	            Bên phải với bên trái
+    layout_constraintRight_toRightOf	        Phải với phải
+    layout_constraintTop_toTopOf	            Cạnh trên với cạnh trên
+    layout_constraintTop_toBottomOf	            Cạnh trên nối với cạnh dưới
+    layout_constraintBottom_toTopOf	            Dưới với trên
+    layout_constraintBottom_toBottomOf	        Dưới với dưới
+    layout_constraintBaseline_toBaselineOf	    Trùng Baseline
+    layout_constraintStart_toEndOf	            Bắt đầu - Kết húc
+    layout_constraintStart_toStartOf	        Bắt đầu - Bắt đầu
+    layout_constraintEnd_toStartOf	            Cuối với bắt đầu
+    layout_constraintEnd_toEndOf	            Cuối với cuối
+    layout_constraintHorizontal_bias	        Định vị view theo trục ngang màn hình.
+    layout_constraintVertical_bias	            Định vị view theo trục dọc màn hình.
+
+    2. Thuộc tính Margin trong views con
+    => Cạnh nào của View con có ràng buộc có thể thêm Margin để điều chỉnh thêm khoảng cách các cạnh tới điểm nối ràng buộc.
+    => android:layout_marginStart, android:layout_marginEnd, android:layout_marginLeft,
+       android:layout_marginTop, android:layout_marginRight, android:layout_marginBottom
+
+    3. Bias
+    Khi hai cạnh đối diện nhau của View có ràng buộc -> View sẽ nằm giữa 2 điểm neo của ràng buộc.
+    Nếu muốn điều chỉnh thì sử dụng thuộc tính:
+        - app:layout_constraintVertical_bias => thiết lập độ mềm hai ràng buộc theo phương ngang
+            Với tổng độ mềm là 1 thì khi app:layout_constraintVertical_bias="0.1" thì độ mềm ràng buộc thứ hai sẽ là 0.9
+        - app:layout_constraintHorizontal_bias => thiết lập độ mềm hai ràng buộc theo phương đứng
+
+    -->
+    <Button
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/hello"
+        android:backgroundTint="@color/color1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contrain_layout"
+        android:backgroundTint="@color/color2"
+        android:layout_marginTop="90dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button1" />
+    <!--
+        Đoạn code trên đang định vị:
+        - button1 ở giữa màn hình
+        - Ràng buộc phần trên của button2 với phần dưới của button1
+    -->
 </androidx.constraintlayout.widget.ConstraintLayout>

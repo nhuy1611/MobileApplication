@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_margin="10dp"
+    android:background="@color/color4">
+
+    <!--
+    RelativeLayout là một ViewGroup có hiển thị các View con ở các vị trí tương đối.
+    Theo mặc định RelativeLayout thì các phần tử sẽ được định vị ở góc trên bên trái của RelativeLayout và chồng lên nhau.
+
+    1. gravity
+        => Dịch chuyển các View con đến những vị trí nhất định trong RelativeLayout
+        => Có thể kết hợp các giá trị bằng |
+        =>  center	            Căn ở giữa
+            top	                Ở phần trên
+            bottom	            Phần dưới
+            center_horizontal	Ở giữa theo chiều ngang
+            center_vertical	    Ở giữa theo chiều đứng
+            left	            Theo cạnh trái
+            right	            Theo cạnh phải
+            bottom	            Cạnh dưới
+         Ví dụ -> android:gravity="center|right"
+
+    2. Định vị view con bằng view cha
+    => Ở project:  cha màu xanh dương, 3 view con lần lược là 3 TextView phía dưới
+    => Cho TextView thứ 3 có thuộc tính "android:layout_centerVertical" thì TextView thứ 3 sẽ nằm giữa theo chiều dọc của view cha
+    - android:layout_alignParentBottom	    true căn thẳng cạnh dưới view con với cạnh dưới View cha
+    - android:layout_alignParentLeft	    true căn thẳng cạnh trái view con với cạnh trái View cha
+    - android:layout_alignParentRight	    true căn thẳng cạnh phải view con với cạnh phải View cha
+    - android:layout_alignParentTop	        true căn thẳng cạnh trên view con với cạnh trên View cha
+    - android:layout_centerInParent	        true căn view con vào giữa View cha
+    - android:layout_centerHorizontal	    true căn view con vào giữa View cha theo chiều ngang
+    - android:layout_centerVertical	        true căn view con vào giữa View cha theo chiều đứng
+
+    3. Định vị các view con với nhau bằng thuộc tính liên hệ với nhau
+    => Ví dụ View con này nằm phía trên một View con khác, nằm phía dưới một view con khác ...
+    - android:layout_below	            Nằm phía dưới View có ID được chỉ ra
+    - android:layout_above	            Nằm phía trên View có ID được chỉ ra
+    - android:layout_toLeftOf	        Nằm phía trái View có ID được chỉ ra
+    - android:layout_toRightOf	        Nằm phía phải View có ID được chỉ ra
+    - android:layout_alignBottom	    Căn thẳng cạnh dưới với cạnh dưới của View có ID được chỉ ra
+    - android:layout_alignLeft	        Căn thẳng cạnh trái với cạnh trái của View có ID được chỉ ra
+    - android:layout_alignRight	        Căn thẳng cạnh phải với cạnh phải của View có ID được chỉ ra
+    - android:layout_alignTop	        Căn thẳng cạnh trên với cạnh trên của View có ID được chỉ ra.....
+    => Ví dụ: Ở TextView2 thêm dòng android:layout_toRightOf="@+id/view1" -> TextView2 nằm bên phải TextView1
+
+    -->
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/view1"
+        android:text="@string/btn_1"
+        android:gravity="center"
+        android:layout_width="@dimen/size_200"
+        android:layout_height="@dimen/size_50"
+        android:background="@color/color1" />
+    <TextView
+        android:id="@+id/view2"
+        android:text="@string/btn_2"
+        android:gravity="center"
+        android:layout_width="@dimen/size_50"
+        android:layout_height="@dimen/size_200"
+        android:background="@color/color2" />
+    <TextView
+        android:id="@+id/view3"
+        android:text="@string/btn_3"
+        android:gravity="center"
+        android:layout_width="@dimen/size_100"
+        android:layout_height="@dimen/size_100"
+        android:background="@color/color3" />
+</RelativeLayout>

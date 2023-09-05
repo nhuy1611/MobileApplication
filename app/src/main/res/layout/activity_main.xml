@@ -1,18 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:gravity="center"
+    android:background="#D9DFDF"
+    android:orientation="horizontal">
+    <!--
+    LinearLayout: sắp xếp các View con một cách liên tục theo tùy chọn:
+        - Xếp theo chiều ngang (một hàng các view)
+        - Xếp theo chiều đứng (một cột các view)
 
-    <TextView
+     1. layout_width và layout_height: 2 thuộc tính quan trọng trong thiết kế UI
+        => Cho phép bạn xác định chiều rộng và chiều cao của một View hoặc ViewGroup
+        => Có thể đặt các giá trị cố định ( ví dụ: 500dp ), hoặc match_parent/wrap_content
+        Ví dụ muốn đặt height = 500dp:
+            + Tạo 1 file dimens.xml ở res/values/dimens.xml
+            + Thêm <dimen name="height_layout">500dp</dimen> vào file trong resources
+            + Sửa code: android:layout_height="match_parent" => android:layout_height="@dimen/height_layout"
+
+     2. background/backgroundTint: Thay đổi màu nền của một View hoặc ViewGroup
+
+     3. android:gravity
+        => Căn chỉnh vị trí các View trong LinearLayout
+        => Ví dụ:   center	            Căn ở giữa
+                    top	                Ở phần trên
+                    bottom	            Phần dưới
+                    center_horizontal	Ở giữa theo chiều ngang
+                    center_vertical	    Ở giữa theo chiều đứng
+                    left	            Theo cạnh trái
+                    right	            Theo cạnh phải
+                    bottom	            Cạnh dưới
+        => Nhận các giá trị kết hợp bằng kí hiệu : | ( Ví dụ =>  android:gravity="right|center" )
+
+     4. text: Đặt nội dung văn bản
+
+     5. textColor: Thay đổi màu của văn bản
+
+     6. orientation:
+        => android:orientation để thiết lập cách sắp xếp phần tử.
+            + android:orientation="horizontal" xếp theo chiều ngang
+            + android:orientation="vertical" xếp theo chiều đứng
+     -->
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:backgroundTint="@color/color_1"
+        android:textColor="@color/black"
+        android:text="@string/btn_1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_2"
+        android:textColor="@color/black"
+        android:text="@string/btn_2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_3"
+        android:textColor="@color/black"
+        android:text="@string/btn_3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_4"
+        android:textColor="@color/black"
+        android:text="@string/btn_4" />
+
+</LinearLayout>

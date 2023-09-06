@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
     tools:context=".MainActivity">
 
-    <TextView
+
+    <!--
+    Button là một thành phần cho phép chúng ta click vào để thao tác thực hiện xử lý một điều gì đó.
+    Có 3 loại: CompoundButton, ToggleButton, RadioButton
+    Vì Butoon kế thừa từ TextView. Do đó, một Button kế thừa tất cả thuộc tính của TextView
+    Cú pháp khai báo:
+        <Button
+            android:id="@+id/btnSimple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name" />
+
+
+    1. android:id: Là thuộc tính duy nhất của Button
+    Dựa vào Id ta sẽ lấy được control theo đúng Id này, xem code bên dưới để biết cách lấy control theo Id:
+    Button btnSimple= (Button) findViewById(R.id.btnSimple);
+
+    2. android:gravity: Thuộc tính này thường sử dụng để canh nội dung trên EditText:
+        => left, right, center, top, bottom, center_vertical, center_horizontal.
+
+    3. android:text: Thuộc tính này dùng xuất chuỗi văn bản lên Button
+    -->
+
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:backgroundTint="@color/color1"
+        android:textSize="20dp"
+        android:text="@string/app_name" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

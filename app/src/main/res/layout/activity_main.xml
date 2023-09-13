@@ -4,12 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color1"
     tools:context=".MainActivity">
+    <!--
+        TextView để hiển thị các đoạn văn bản mà không muốn người dùng có thể chỉnh sửa được nội dung.
+        Có thể khai báo TextView trong file layout XML hoặc trong đoạn code Java.
+        TextView là class con của View ⇒ Có thể đặt một TextView vào bên trong một GroupView trong ứng dụng của mình.
+
+        android:text => xuất chuỗi văn bản lên TextView
+        android:id => để thiết lập id của TextView
+        android:layout_width, android:layout_height => thiết lập chiều rộng, chiều cao của TextView
+        android:gravity => để thiết lập vị trí tương đối của các dòng chữ bên trong TextView
+        android:textColor => để thiết lập màu chữ, gán giá trị màu theo số HEX của màu
+        android:textSize => để thiết lập cỡ chữ
+        android:textStyle => để thiết lập định dạng chữ, có thể nhận phối hợp các giá trị bold (đậm), italic (nghiêng), normal (bình thường).
+        android:fontFamily dùng để thiết lập font chữ cho TextView ........
+    -->
 
     <TextView
+        android:id="@+id/text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
+        android:textSize="30dp"
+        android:textColor="@color/color4"
+        android:textStyle="bold"
+        android:fontFamily="serif-monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

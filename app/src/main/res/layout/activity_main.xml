@@ -18,8 +18,6 @@
         - android:checkedButton="@id/idradio" ở RadioGroup ( idradio là id của RadioButton sẽ checked mặc định )
         => Nếu có nhu cầu chọn nhiều thì có thể chuyển sang sử dụng CheckBox
         - android:checked="true" là checked / android:checked="false" là unchecked
-
-
     -->
     <RadioButton
         android:id="@+id/radio_a"
@@ -39,5 +37,43 @@
         android:text="RadioButton - C"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/idTVHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/idTVStatus"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Checkbox in Android"
+        android:textAlignment="center"
+        android:textColor="@color/color1"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--on below line we are creating a text view-->
+    <TextView
+        android:id="@+id/idTVStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/idCheckBox"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Status"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!--on below line we are creating a checkbox-->
+    <CheckBox
+        android:id="@+id/idCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Check the box" />
+
 
 </RadioGroup>

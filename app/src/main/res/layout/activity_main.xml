@@ -18,25 +18,27 @@
         - android:checkedButton="@id/idradio" ở RadioGroup ( idradio là id của RadioButton sẽ checked mặc định )
         => Nếu có nhu cầu chọn nhiều thì có thể chuyển sang sử dụng CheckBox
         - android:checked="true" là checked / android:checked="false" là unchecked
+
+
     -->
     <RadioButton
         android:id="@+id/radio_a"
-        android:text="RadioButton - A"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="RadioButton - A" />
 
     <RadioButton
         android:id="@+id/radio_b"
-        android:text="RadioButton - B"
-        android:checked="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="RadioButton - B" />
 
     <RadioButton
         android:id="@+id/radio_c"
-        android:text="RadioButton - C"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="RadioButton - C" />
 
     <TextView
         android:id="@+id/idTVHeading"

@@ -8,7 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    // on below line we are creating a variable.
+    // Khai báo các biến thành viên: Có hai biến thành viên, một CheckBox và một TextView.
+    // Chúng được sử dụng để tham chiếu đến các thành phần giao diện người dùng trong layout của ứng dụng.
     private CheckBox checkBox;
     private TextView statusTV;
 
@@ -17,35 +18,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // on below line we are initializing our variables.
         checkBox = findViewById(R.id.idCheckBox);
         statusTV = findViewById(R.id.idTVStatus);
-
-        // on below line we are checking
-        // the status of check box
+        // Kiểm tra trạng thái CheckBox:
+        // Nếu CheckBox đã được chọn, nó sẽ đặt văn bản của TextView thành “Checkbox is Checked”.
+        // Nếu không, nó sẽ đặt văn bản thành “Checkbox is UnChecked”.
         if (checkBox.isChecked()) {
-            // on below line we are setting text
-            // if check box is checked.
             statusTV.setText("Checkbox is Checked");
         } else {
-            // on below line we are setting the text
-            // if check box is un checked
             statusTV.setText("Checkbox is UnChecked");
         }
 
-        // on below line we are adding check change listener for our check box.
+        // Thiết lập listener cho CheckBox:
+        // Một listener được thiết lập cho CheckBox để theo dõi sự thay đổi trạng thái của nó.
+        // Khi trạng thái của CheckBox thay đổi, văn bản của TextView cũng sẽ thay đổi tương ứng.
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                // on below line we are checking if
-                // checkbox is checked or not.
                 if (isChecked) {
-                    // on below line we are setting text
-                    // if checkbox is checked.
                     statusTV.setText("Checkbox is Checked");
                 } else {
-                    // on below line we are setting text
-                    // if checkbox is unchecked.
                     statusTV.setText("Checkbox is UnChecked");
                 }
             }

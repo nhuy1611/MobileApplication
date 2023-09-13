@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="visible"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--
+    Bước 1: Tạo BottomNavigationView và FrameLayout vào
+    Bước 2:
+        - Ở FrameLayout: Neo với dưới trái và dưới phải, Kéo mép dưới lên để làm navbar
+        - Ở BottomNavigationView: Neo với dưới trái và dưới phải và layout_height="wrap_content"
+    Bước 3:
+        - Tạo fodel menu: res -> new -> Android Resource File. File name và Resource File là menu
+        - Tạo file bottom_nav_menu.xml: menu -> new -> Menu Resource File. File name là bottom_nav_menu
+    Bước 4: Add icon.
+        - Tại res/drawable chuột phải chọn New -> Vector Asset
+        - Tại clip art, tìm icon cần và OK
+    Bước 5: Tại file bottom_nav_menu.xml => Thêm chỉnh sửa title, thêm id và icon vào cho từng item
+        VD: android:icon="@drawable/baseline_home_24"
+
+    Bước 6: Tạo các file fragment
+        - App => New => Fragment => Fragment (blank)
+        - Tạo lần lượt các file có Fragment Name là HomeFragment, UserFragment, SettingsFragment
+        - Các file được tạo là:
+            Java(HomeFragment, UserFragment, SettingsFragment)
+            xml(fragment_home, fragment_user, fragment_settings)
+    -->
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:background="#ECDEDE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/bottom_nav_menu">
 
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

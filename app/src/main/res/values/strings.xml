@@ -5,4 +5,8 @@
     <string name="btn_3">3</string>
     <string name="btn_4">4</string>
     <string name="btn_5">5</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Home Fragment</string>
+    <string name="user_fragment">User Fragment</string>
+    <string name="settings_fragment">Settings Fragment</string>
 </resources>

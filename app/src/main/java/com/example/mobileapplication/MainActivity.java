@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
     private Switch switchView;
     private TextView statusTV;
 
@@ -19,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
         switchView = findViewById(R.id.idSwitch);
         statusTV = findViewById(R.id.idTVStatus);
 
+        // Nếu Switch được set True thì text của phần tử có id là statusTV sẽ được gán là "Switch is Checked"
+        // Ngược lại thì là "Switch is UnChecked"
         if (switchView.isChecked()) {
             statusTV.setText("Switch is Checked");
         } else {

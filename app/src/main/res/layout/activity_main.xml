@@ -6,13 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!--
+    Dùng để hiện thị dữ liệu là một danh sách (mảng) từ một nguồn cấp gọi là Adapter
+    Hiển thị trong một danh sách có thể cuộn được
+    Có thể chọ mục trong danh sách bằng cách Click.
+    Chỉ hỗ trợ danh sách dạng chiều dọc, không hỗ trợ danh danh sách dạng chiều ngang.
 
+    Để sử dụng ListView cần các thành phần như sau:
+        - DataSource: chính là dữ liệu sử dụng để binding lên ListView.
+        - Adapter: là thành phần gắn kết DataSource với AdapterView.
+                Adapter có nhiệm vụ gắn kết từng item trong DataSource với từng row trong AdapterView
+        - AdapterView: là ViewGroup, có các lớp con là ListView, GridView hay Spinner.
+
+
+
+    B1: Tạo ListView
+    B2: Thêm array vào MainActivity.java
+    B3: Để hiển thị được mảng String ở trên vào ListView
+        => Phải đưa mỗi String vào một View con nằm trong ListView.
+        => Mỗi item trong ListView đều có một layout riêng
+        => res/layout > New Android resource file ( Tạo 1 file là item_name )
+
+    B4: Tạo ra Adapter
+        Adapter là class để ánh xạ item view và item trong danh sách String đầu vào.
+        ( Trong trường hợp này, nó ánh xạ mỗi phần tử trong mảng String[] items vừa khai báo ở trên )
+        => Tạo DataAdapter.java và thêm "extends BaseAdapter" vào => sửa lỗi => class khung sơ bộ 4 method
+
+    B5: Truyền cho class trên dữ liệu dạng danh sách hoặc mảng và truyền qua constructor của nó
+        ( Trong code này dùng String[] )
+        => Code file DataAdapter.java
+
+    B6: Cài đặt adapter cho ListView tại MainActivity.java
+
+
+    -->
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

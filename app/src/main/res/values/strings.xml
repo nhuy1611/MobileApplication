@@ -5,4 +5,5 @@
     <string name="btn_3">3</string>
     <string name="btn_4">4</string>
     <string name="btn_5">5</string>
+    <string name="switch_in_android">Switch in Android</string>
 </resources>

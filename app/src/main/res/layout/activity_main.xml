@@ -57,4 +57,11 @@
         app:layout_constraintTop_toBottomOf="@+id/idTVStatus"
         tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
+    <!--
+    tools:ignore="MissingConstraints"   => bỏ qua lỗi "Missing Constraints"
+
+    MissingConstraints: Lỗi này xảy ra khi một widget không được ràng buộc với bất kỳ đối tượng nào khác.
+    UseSwitchCompatOrMaterialXml: Lỗi này xảy ra khi bạn sử dụng widget Switch trong một layout XML mà không sử dụng namespace androidx.appcompat.
+    -->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

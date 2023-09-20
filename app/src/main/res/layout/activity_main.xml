@@ -11,9 +11,29 @@
     Intents sẽ được gửi đến hệ thống Android để xác định hành động bạn muốn thực hiện, đối tượng bạn muốn xử lý.
     Intents có thể bao gồm dữ liệu thông qua Bundle. Bundle giống như một cái hộp. Bên nhận sẽ mở bundle ra nhờ key và lấy ra dữ liệu.
 
-
+    Explicit intent => Intent tường minh vì nó chỉ rõ component sẽ nhận và xử lý.
 
     -->
 
 
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:text="Signup"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

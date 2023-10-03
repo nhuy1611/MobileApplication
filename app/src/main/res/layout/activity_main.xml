@@ -62,7 +62,7 @@
             android:layout_marginTop="128dp"
             android:gravity="center"
             android:text="Main"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
